@@ -9,12 +9,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      # This step checks out a copy of your repository.
-      - uses: actions/checkout@v3
-      # This step references the directory that contains the action.
-      - uses: ./.github/actions/hello-world-action  
-      - run: npm install -g bats
-      - run: bats -v
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
 jobs:
   my_first_job:
     steps:
