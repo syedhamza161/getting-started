@@ -9,5 +9,17 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
+      # This step references the directory that contains the action.
+      - uses: ./.github/actions/hello-world-action  
       - run: npm install -g bats
       - run: bats -v
+jobs:
+  my_first_job:
+    steps:
+      - name: My first step
+        uses: actions/setup-node@v3
+jobs:
+  my_first_job:
+    steps:
+      - name: My second step
+        uses: docker://alpine:3.8              
