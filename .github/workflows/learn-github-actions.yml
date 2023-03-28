@@ -1,13 +1,13 @@
-name: hello-world workflow
+name: Sintov Actions Plan
 
 on:
   push:
     branches:
-      - main
-  pull:
+      - master
+  pull_request:
     branches:
-      - main
-  workflow-dispatch:    
+      - master
+  workflow_dispatch:
 
 jobs:
   hello:
@@ -15,12 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: hello world
-        run: echo "Hello World"
+        run: echo "hello world"
         shell: bash
 
   goodbye:
     runs-on: ubuntu-latest
     steps:
-      - name: good bye world
-        run: echo "Good Bye Hello World"
-        shell: bash     
+      - name: good bye hello world
+        run: echo "good bye hello world"
+        shell: bash
