@@ -10,13 +10,7 @@ jobs:
         with:
           node-version: '14'
 
-  my_second_job:
-    name: First
-      steps:
-        - name: My first step
-          uses: actions/setup-node@v3
-
-  my_third_job:
+  my_first_job:
     name: second
       steps:
         - name: My second step
