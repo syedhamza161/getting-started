@@ -9,4 +9,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - uses: ./.github/actions/build.yml
+jobs:
+  my_first_job:
+    steps:
+      - name: My first step
+        uses: actions/setup-node@v3
+jobs:
+  my_second_job:
+    steps:
+      - name: My second step
+        uses: docker://alpine:3.8        
