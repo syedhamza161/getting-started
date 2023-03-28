@@ -1,17 +1,26 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning github actions
-on: [push]
+name: hello-world workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull:
+    branches:
+      - main
+  workflow-dispatch:    
+
 jobs:
-  check-bats-version:
+  hello:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
+      - uses: actions/checkout@v2
+      - name: hello world
+        run: echo "Hello World"
+        shell: bash
 
-  my_first_job:
-    name: second
-      steps:
-        - name: My second step
-          uses: docker://alpine:3.8        
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: good bye world
+        run: echo "Good Bye Hello World"
+        shell: bash     
